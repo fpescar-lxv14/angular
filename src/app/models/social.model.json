@@ -1,14 +1,20 @@
 [
     {
         "link": "https://linkedin.com/in/myprofile",
-        "text": "LinkedIn"
+        "text": "LinkedIn",
+        "target": "_blank",
+        "color": "#36c"
     },
     {
         "link": "https://api.whatsapp.com/send?phone=1103034567&text=Hola,que+tal+como+te+va",
-        "text": "WhatsApp"
+        "text": "WhatsApp",
+        "target": "_blank",
+        "color": "#3c6"
     },
     {
         "link": "https://github.com/fpescar-lxv14/angular",
-        "text": "GitHub"
+        "text": "GitHub",
+        "target": "_blank",
+        "color": "#333"
     }
 ]
