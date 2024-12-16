@@ -1,0 +1,14 @@
+[
+    {
+        "link": "https://linkedin.com/in/myprofile",
+        "text": "LinkedIn"
+    },
+    {
+        "link": "https://api.whatsapp.com/send?phone=1103034567&text=Hola,que+tal+como+te+va",
+        "text": "WhatsApp"
+    },
+    {
+        "link": "https://github.com/fpescar-lxv14/angular",
+        "text": "GitHub"
+    }
+]

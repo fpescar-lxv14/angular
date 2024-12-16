@@ -1,0 +1,13 @@
+<footer>
+    <div *ngFor="let item of social">
+        <a  [title]="item.text"
+            [href]="item.link" 
+            target="_blank">
+            {{item.text}}
+        </a>
+    </div>
+    <p>
+        &copy;{{copy}}
+        <span *ngIf="author.length > 3">{{author}}</span>
+    </p>
+</footer>
