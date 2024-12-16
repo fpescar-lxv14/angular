@@ -1,0 +1,11 @@
+<ul>
+@for (item of links; track $index){
+    <li [style.background-color]="item.color">
+        <a  [class]="'fa fa-'+item.icon"
+            [href]="item.link"
+            [target]="item.target ? item.target : '_self'">
+            {{item.text}}
+        </a>
+    </li>
+}
+</ul>
