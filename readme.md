@@ -7,3 +7,5 @@ Está basado en TypeScript y se utiliza para desarrollar aplicaciones web intera
 ## Tabla de Contenidos
 
 * [Caracteristicas](./docs/general.md)
+* [TypeScript](./docs/ts.md)
+* [Angular-cli](./docs/ng.md)
