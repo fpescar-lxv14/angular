@@ -8,6 +8,15 @@ export class SessionService {
   private session:Session = {
     username: "",
     password: "",
-    role: "GUEST"
+    role: "GUEST",
+  }
+  getSession(){ 
+    return this.session; 
+  }
+  setSession(session:Session){ 
+    this.session = session;
+  }
+  setValue(key:keyof Session, value:any){
+    this.session[key] = value
   }
 }

@@ -1,7 +1,7 @@
-import { JsonPipe, UpperCasePipe } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Inject, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLinkWithHref } from '@angular/router';
+import { SessionService } from '../../services/session.service';
 
 @Component({
   selector: 'app-login',
@@ -14,10 +14,7 @@ import { RouterLinkWithHref } from '@angular/router';
 })
 export class LoginComponent {
   @Output() submitLogin = new EventEmitter()
-  login = {
-    username:"",
-    password: ""
-  }
+  login = Inject(SessionService)
   handleLogin (){
     this.submitLogin.emit(this.login)
   }

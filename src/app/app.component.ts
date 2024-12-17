@@ -25,9 +25,8 @@ import { Session } from './models/session.interface';
 export class AppComponent {
   title = 'Fundacion Pescar';
   subtitle = 'Capacitacion Angular'
-  session:Session = { username: "" };
-
-  constructor(@Inject() SessionService:Session){
-    this.session = SessionService
+  session:Session = Inject(SessionService);
+  constructor(){
+    console.log(this.session.username)
   }
 }
