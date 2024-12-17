@@ -1,9 +1,17 @@
-<form action="">
+<form #loginForm (submit)="handleLogin()">
     <h2>Iniciar Sesion</h2>
-    <label for="">Nombre de Usuario</label>
-    <input type="text">
-    <label for="">Contraseña</label>
-    <input type="text">
+    <label for="username">Nombre de Usuario</label>
+    <input #username
+        type="text"
+        [(ngModel)]="login.username"
+        [ngModelOptions]="{ standalone: true }"
+        required>
+    <label for="password">Contraseña</label>
+    <input #password
+        type="password"
+        [(ngModel)]="login.password"
+        [ngModelOptions]="{ standalone: true }"
+        required>
     <div class="btn-container">
         <a routerLink="/signin">No tenes cuenta. ¡¡Registrate!!</a>
         <button>Aceptar</button>
