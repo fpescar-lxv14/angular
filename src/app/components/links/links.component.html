@@ -1,11 +1,19 @@
 <ul>
 @for (item of links; track $index){
     <li [style.background-color]="item.color">
-        <a  [class]="'fa fa-'+item.icon"
-            [href]="item.link"
-            [target]="item.target ? item.target : '_self'">
-            {{item.text}}
-        </a>
+        @if (isRouterLink) {
+            <a  [class]="'fa fa-'+item.icon" 
+                [routerLink]="item.link">
+                {{item.text}}
+            </a>
+        }
+        @else {
+            <a  [class]="'fa fa-'+item.icon" 
+                [href]="item.link" 
+                [target]="item.target">
+                {{item.text}}
+            </a>
+        }
     </li>
 }
 </ul>
