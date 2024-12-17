@@ -9,10 +9,6 @@ import { SessionService } from '../../services/session.service';
   imports: [
     FormsModule,
     RouterLinkWithHref,
-    JsonPipe,
-  ],
-  providers: [
-    SessionService,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'

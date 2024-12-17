@@ -5,18 +5,14 @@ import { Session } from '../models/session.interface';
   providedIn: 'root'
 })
 export class SessionService {
-  private session:Session = {
-    username: "",
-    password: "",
-    role: "GUEST",
-  }
-  getSession(){ 
+  private session:Session = { username: "", password: "" }
+  public getSession(){ 
     return this.session; 
   }
-  setSession(session:Session){ 
+  public setSession(session:Session){ 
     return this.session = session;
   }
-  setValue(key:keyof Session, value:any){
+  public setValue(key:keyof Session, value:any){
     return this.session[key] = value
   }
 }

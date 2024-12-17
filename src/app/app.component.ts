@@ -11,13 +11,9 @@ import { Session } from './models/session.interface';
   selector: 'app-root',
   imports: [
     RouterOutlet,
-    JsonPipe,
     NavComponent,
     HeaderComponent,
     FooterComponent,
-  ],
-  providers: [
-    SessionService,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
