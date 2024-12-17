@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Inject, Output } from '@angular/core';
+import { JsonPipe, UpperCasePipe } from '@angular/common';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLinkWithHref } from '@angular/router';
 import { SessionService } from '../../services/session.service';
@@ -8,14 +9,23 @@ import { SessionService } from '../../services/session.service';
   imports: [
     FormsModule,
     RouterLinkWithHref,
+    JsonPipe,
+  ],
+  providers: [
+    SessionService,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  @Output() submitLogin = new EventEmitter()
-  login = Inject(SessionService)
+  login = {
+    username:"",
+    password: "",
+  }
+  constructor(private sessionService:SessionService){}
   handleLogin (){
-    this.submitLogin.emit(this.login)
+    this.sessionService.setSession({
+      ...this.login, role: "STANDARD"
+    })
   }
 }
