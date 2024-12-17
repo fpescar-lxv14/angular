@@ -6,3 +6,27 @@
 body{
     margin: 0;
 }
+form{
+    max-width: 540px;
+    display: grid;
+    gap: .2rem;
+    padding: 1rem;
+    margin: 1rem auto;
+}
+input,
+textarea,
+select{
+    outline: none;
+    border: 1px solid;
+    border-radius: .25rem;
+    padding: .5rem;
+    opacity: .7;
+}
+form :focus{
+    border-color: #248;
+    opacity: .9;
+}
+.btn-container{
+    display: flex;
+    justify-content: space-between;
+}
