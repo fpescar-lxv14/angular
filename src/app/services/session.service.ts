@@ -14,9 +14,9 @@ export class SessionService {
     return this.session; 
   }
   setSession(session:Session){ 
-    this.session = session;
+    return this.session = session;
   }
   setValue(key:keyof Session, value:any){
-    this.session[key] = value
+    return this.session[key] = value
   }
 }
