@@ -1,0 +1,9 @@
+<mat-toolbar-row>
+    <a routerLink="/">GEFA</a>
+@for(item of menu; track $index){
+    <a [routerLink]="item.path">
+        <mat-icon [fontIcon]="item.icon"/>
+        {{item.text}}
+    </a>
+}
+</mat-toolbar-row>
