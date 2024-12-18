@@ -4,6 +4,7 @@ import { SessionService } from '../../services/session.service';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ValidationComponent } from '../../components/validation/validation.component';
 import { Session } from "../../models/session.interface"
+import { passwordValidation, emailValidation, nameValidation } from '../../models/data.validation';
 
 @Component({
   selector: 'app-signin',
@@ -17,27 +18,12 @@ import { Session } from "../../models/session.interface"
   styleUrl: './signin.component.css'
 })
 export class SigninComponent {
-  nameValidation = [
-    Validators.required,
-    Validators.minLength(4),
-    Validators.maxLength(50),
-  ]
-  emailValidation = [
-      Validators.required,
-      Validators.minLength(8),
-      Validators.pattern(/[^@\W]+@\w+(\.\w+)*/),
-  ]
-  passwordValidation = [
-    Validators.required,
-    Validators.minLength(8),
-    Validators.pattern(/^(?:(?=.*[A-Z])+(?=.*[a-z])+(?=.*[\d])+(?=.*[\W])).{8,}$/)
-  ]
-  pass2 = new FormControl('',this.passwordValidation)
   signin = new FormGroup({
-    username: new FormControl('', this.nameValidation),
-    email: new FormControl('', this.emailValidation),
-    password: new FormControl('', this.passwordValidation)
+    username: new FormControl('', nameValidation),
+    email: new FormControl('', emailValidation),
+    password: new FormControl('', passwordValidation)
   })
+  pass2 = new FormControl('',passwordValidation)
   constructor(private sessionService:SessionService){}
   compare(){
     return this.signin.get('password')?.value !== this.pass2.value
