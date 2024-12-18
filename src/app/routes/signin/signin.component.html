@@ -1,15 +1,28 @@
-<form action="">
+<form [formGroup]="signin">
     <h2>Registrate</h2>
-    <label for="">Coloque su nombre</label>
-    <input type="text">
-    <label for="">Escriba su correo</label>
-    <input type="email">
-    <label for="">Ingrese una Contraseña</label>
-    <input type="password">
-    <label for="">Repita la contraseña</label>
-    <input type="password">
+    <label for="username">Coloque su nombre</label>
+    <input id="username" type="text" formControlName="username">
+    <div>
+        
+    </div>
+    <label for="email">Escriba su correo</label>
+    <input id="email" type="email" formControlName="email">
+    <div>
+        
+    </div>
+    <label for="password">Ingrese una Contraseña</label>
+    <input id="password" type="password" formControlName="password">
+    <div>
+
+    </div>
+    <label for="password">Repita la contraseña</label>
+    <input id="password" type="password">
+    <div>
+
+    </div>
     <div class="btn-container">
         <a routerLink="/login">Tenes cuenta. ¡Inicia sesion!</a>
         <button>Confirmar</button>
     </div>
+    {{ signin.value | json}}
 </form>
