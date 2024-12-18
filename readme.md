@@ -11,3 +11,5 @@ Está basado en TypeScript y se utiliza para desarrollar aplicaciones web intera
 * [Angular-cli](./docs/ng.md)
 * [commonModule](./docs/common.md)
 * [Two-Way Binding](./docs/binding.md)
+* [Template-Driven Forms](./docs/tdriven.md)
+* [Reactive Forms](./docs/reactive.md)
