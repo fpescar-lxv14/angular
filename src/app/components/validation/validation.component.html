@@ -1,18 +1,21 @@
-<div class="form-feedback" [class.active]="touched()" 
+<ul class="form-feedback" [class.active]="touched()" 
     [ngStyle]="{ color:  
         isValid() ? '#284' : 
         touched() ? '#c33' : '#333' 
     }">
-    @if (getError('required')){ El campo es obligatorio }
+    @if (getError('required')){ 
+        <li><small>El campo es obligatorio</small></li> 
+    }
     @if (getError('minlength')){
-        Se requiere que el campo tenga {{required()}} caracteres como minimo y solamente posee {{current()}}
+       <li><small>Se requiere que el campo tenga {{required()}} caracteres como minimo y solamente posee {{current()}}</small></li>
     }
     @if (getError('pattern')){
-        Se debe respetar el formato solicitado similar a como se muestra en el siguiente ejemplo: {{example}}
+        <li><small>Se debe respetar el formato solicitado similar a como se muestra en el siguiente ejemplo: {{example}}</small></li>
     }
-    @if (custom === true){
-        {{message}}
+    @if (custom){ 
+        <li><small>{{message}}</small></li> 
     }
-    @if(isValid()){ El valor cumple con todas las condiciones }
-    {{control?.errors | json}}
-</div>
+    @if(isValid()){ 
+        <li><small>El valor cumple con todas las condiciones</small></li> 
+    }
+</ul>

@@ -6,7 +6,6 @@ import { AbstractControl } from '@angular/forms';
   selector: 'app-validation',
   imports: [
     NgStyle,
-    JsonPipe
   ],
   templateUrl: './validation.component.html',
   styleUrl: './validation.component.css'
@@ -16,6 +15,7 @@ export class ValidationComponent {
   @Input() example='';
   @Input() custom:Boolean=false;
   @Input() message='';
+
   isValid(){
     return this.control?.valid
   }
