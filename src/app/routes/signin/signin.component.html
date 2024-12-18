@@ -1,28 +1,27 @@
-<form [formGroup]="signin">
+<form id="signinForm" [formGroup]="signin" (ngSubmit)="handleSubmmit()">
     <h2>Registrate</h2>
     <label for="username">Coloque su nombre</label>
     <input id="username" type="text" formControlName="username">
-    <div>
-        
-    </div>
+    <app-validation [control]="signin.get('username')" />
+
     <label for="email">Escriba su correo</label>
     <input id="email" type="email" formControlName="email">
-    <div>
-        
-    </div>
-    <label for="password">Ingrese una Contraseña</label>
-    <input id="password" type="password" formControlName="password">
-    <div>
+    <app-validation example="cristiandracedo@hotmail.com"
+        [control]="signin.get('email')" />
+    
+    <label for="pass1">Ingrese una Contraseña</label>
+    <input id="pass1" type="password" formControlName="password">
+    <app-validation example="Abcd1234$#!"
+        [control]="signin.get('password')" />
 
-    </div>
-    <label for="password">Repita la contraseña</label>
-    <input id="password" type="password">
-    <div>
+    <label for="pass2">Repita la contraseña</label>
+    <input id="pass2" type="password" [formControl]="pass2">
+    <app-validation example="Abcd1234$#!"
+        [control]="pass2" [custom]="compare()"
+        message='las contraseñas no coinciden'/>
 
-    </div>
     <div class="btn-container">
         <a routerLink="/login">Tenes cuenta. ¡Inicia sesion!</a>
         <button>Confirmar</button>
     </div>
-    {{ signin.value | json}}
 </form>
