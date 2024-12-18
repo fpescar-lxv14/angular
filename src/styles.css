@@ -30,3 +30,14 @@ form :focus{
     display: flex;
     justify-content: space-between;
 }
+.form-feedback{
+    list-style-position: inside;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    transition: all .5s ease;
+}
+.form-feedback.active{
+    max-height: 600px;
+}
