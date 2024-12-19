@@ -1,0 +1,8 @@
+@if (error){
+    <pre>{{error | json}}</pre>
+}
+@if (users.length){
+    @for (usr of users; track $index){
+    <app-infocard [user]="usr"/>
+}}
+<button (click)="getData()">Nuevas Solicitudes</button>
