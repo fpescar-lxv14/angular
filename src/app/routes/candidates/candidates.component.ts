@@ -21,14 +21,19 @@ export class CandidatesComponent {
       next: (res:any) => { this.users = res?.results },
       error: (error) => { this.error = error}
   })}
-  showData(){
-    console.log(this.users)
-  }
-  getData(){
-    this.candidateService.getCandidates('?results=12')
+  getData(n="?results=12"){
+    this.candidateService.getCandidates(n)
       .subscribe({
         next: (res:any) => { this.users.push(res?.results) },
         error: (error) => { this.error = error }
       })
+  }
+  replace(id:string){
+    // Agregandolo al final del array
+    this.users = this.users.filter((item:any) => id !== item.login.uuid)
+    this.getData('')
+    // // Reemplazando posicion
+    // const data = this.candidateService.getCandidates(v => v.results)
+    // this.users = this.users.map(item => item.login.uuid == id ? data : item)
   }
 }

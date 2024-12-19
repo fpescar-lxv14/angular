@@ -3,6 +3,6 @@
 }
 @if (users.length){
     @for (usr of users; track $index){
-    <app-infocard [user]="usr"/>
+    <app-infocard [user]="usr" (discard)="replace(usr.login.uuid)"/>
 }}
 <button (click)="getData()">Nuevas Solicitudes</button>
