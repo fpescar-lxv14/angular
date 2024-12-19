@@ -1,0 +1,31 @@
+<mat-card>
+    <mat-card-header>
+        <img mat-card-avatar [src]="user.picture?.large" [alt]="user.login.username">
+        <mat-card-title>
+            {{ user.name?.title }}
+            {{ user.name?.last }}
+            {{ user.name?.first }}
+        </mat-card-title>
+        <mat-card-subtitle>
+            <a [href]="'mailto:'+user.email" target="_blank">{{ user.email }}</a>
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item>
+                <strong>Telefono: </strong>
+                <a [href]="'tel:'+user?.phone">{{user.phone}}</a>
+            </mat-list-item>
+            <mat-list-item>
+                <strong>Celular: </strong>
+                <a [href]="'tel:'+user?.phone">{{user.cell}}</a>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+    <mat-card-footer>
+        <mat-card-actions>
+            <button mat-flat-button>Descartar</button>
+            <button mat-flat-button>Seleccionar</button>
+        </mat-card-actions>
+    </mat-card-footer>
+</mat-card>
