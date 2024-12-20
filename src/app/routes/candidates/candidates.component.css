@@ -1,0 +1,8 @@
+section{
+    max-width: 1320px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: .5rem;
+    margin: 1rem auto;
+    padding: 1rem;
+}

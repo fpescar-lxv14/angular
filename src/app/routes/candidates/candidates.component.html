@@ -1,8 +1,10 @@
-@if (error){
-    <pre>{{error | json}}</pre>
-}
-@if (users.length){
-    @for (usr of users; track $index){
-    <app-infocard [user]="usr" (discard)="replace(usr.login.uuid)"/>
-}}
-<button (click)="getData()">Nuevas Solicitudes</button>
+<section>
+    @if (error){
+        <pre>{{error | json}}</pre>
+    }
+    @if (users.length){
+        @for (usr of users; track $index){
+        <app-infocard [user]="usr" (discard)="replace($event)"/>
+    }}
+    <button mat-flat-button (click)="getData()">Nuevas Solicitudes</button>
+</section>
