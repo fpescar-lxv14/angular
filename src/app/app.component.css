@@ -166,3 +166,8 @@
       margin-block: 1.5rem;
     }
   }
+section{
+  margin: 0;
+  padding: 1rem;
+  min-height: calc(100vh - 4rem);
+}
