@@ -6,7 +6,6 @@ import { Candidate } from '../../models/candidate.interface';
 import { MatButton } from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 
-
 @Component({
   selector: 'app-candidates',
   imports: [

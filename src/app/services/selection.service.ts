@@ -13,6 +13,7 @@ export class SelectionService {
     return this.selection;
   }
   selectCandidate(candidate:Candidate){
+    !this.selection.find((item:Candidate) => item.login.uuid === candidate.login.uuid) && 
     this.selection.push(candidate)
   }
   removeCandidate(id:string){
