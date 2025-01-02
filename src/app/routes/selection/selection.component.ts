@@ -1,22 +1,25 @@
-import { Component, Pipe } from '@angular/core';
+import { Component } from '@angular/core';
 import { Candidate } from '../../models/candidate.interface';
 import { SelectionService } from '../../services/selection.service';
-import { JsonPipe, KeyValuePipe } from '@angular/common';
-import { ProfileComponent } from '../profile/profile.component';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+
+// import { ProfileComponent } from '../profile/profile.component';
 
 @Component({
   selector: 'app-selection',
   imports: [
-    JsonPipe,
+    MatTableModule, 
+    MatPaginatorModule
   ],
   templateUrl: './selection.component.html',
   styleUrl: './selection.component.css'
 })
 export class SelectionComponent {
-  list:Candidate[] = []
-
+  dataSource:MatTableDataSource<Candidate>;
+  displayedColumns = ["Foto", "Candidato", "Correo", "Telefono", "Celular"]
   constructor(private select:SelectionService){
-    this.list = this.select.getCandidates()
+    this.dataSource = new MatTableDataSource<Candidate>(this.select.getCandidates())
   }
   getKeys(object:object){
     return Object.keys(object)
