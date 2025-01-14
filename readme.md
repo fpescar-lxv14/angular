@@ -13,3 +13,4 @@ Está basado en TypeScript y se utiliza para desarrollar aplicaciones web intera
 * [Two-Way Binding](./docs/binding.md)
 * [Template-Driven Forms](./docs/tdriven.md)
 * [Reactive Forms](./docs/reactive.md)
+* [RxJS y Observables](./docs/http.md)
